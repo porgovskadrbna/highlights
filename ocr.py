@@ -2,7 +2,7 @@ import glob
 import json
 import pytesseract
 
-months = ["prosinec"]
+months = ["unor"]
 
 try:
     with open("data.json") as file:

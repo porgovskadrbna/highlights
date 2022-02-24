@@ -1,7 +1,7 @@
 import glob
 from PIL import Image
 
-months = ["rijen", "listopad", "prosinec", "leden"]
+months = ["unor"]
 
 for month in months:
     for ext in ("jpg", "webp"):
