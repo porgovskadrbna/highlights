@@ -4,10 +4,6 @@
   font-family: "Roboto Slab", serif;
 }
 
-[x-cloak] {
-  display: none !important;
-}
-
 body {
   background-color: #12171f;
 }
@@ -85,6 +81,10 @@ h1 {
   width: 100%;
   border-radius: 0.5em;
   aspect-ratio: 9 / 16;
+  background-color: #222e3f;
+  padding: 0.8em;
+  color: white;
+  font-size: 0.8em;
 }
 
 #preview {
