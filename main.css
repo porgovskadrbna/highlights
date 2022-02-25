@@ -82,9 +82,9 @@ h1 {
   border-radius: 0.5em;
   aspect-ratio: 9 / 16;
   background-color: #222e3f;
-  padding: 0.8em;
   color: white;
   font-size: 0.8em;
+  vertical-align: middle;
 }
 
 #preview {
