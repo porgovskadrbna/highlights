@@ -1,7 +1,7 @@
 import glob
 from PIL import Image
 
-months = ["unor"]
+months = ["zari", "rijen", "listopad", "prosines", "leden", "unor"]
 
 for month in months:
     for ext in ("jpg", "webp"):
@@ -10,4 +10,9 @@ for month in months:
 
             image = Image.open(file)
             resized = image.resize((480, 853))
-            resized.save(file.replace(".original", ""))
+            resized.save(
+                file.replace(".original", ""),
+                format="JPEG",
+                optimize=True,
+                quality=65,
+            )
