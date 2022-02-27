@@ -1,5 +1,6 @@
 import time
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 
 driver = webdriver.Firefox()
 driver.get("https://instagram.com")
@@ -14,7 +15,9 @@ try:
     imgs = []
     while True:
         try:
-            next = driver.find_element_by_css_selector('[aria-label="Next"]')
+            next = driver.find_element(
+                by=By.CSS_SELECTOR, value='[aria-label="Next"]'
+            )
         except:
             break
 
