@@ -3,7 +3,7 @@ import json
 import pytesseract
 
 years = ["2021", "2022"]
-months = ["zari", "rijen", "listopad", "prosines", "leden", "unor"]
+months = ["zari", "rijen", "listopad", "prosinec", "leden", "unor"]
 
 try:
     with open("data.json") as file:
