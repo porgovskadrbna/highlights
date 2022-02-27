@@ -1,9 +1,6 @@
 import time
 from selenium import webdriver
 
-USERNAME = "michaljanocko"
-PASSWORD = "zTquYTC7scR5VPqZ"
-
 driver = webdriver.Firefox()
 driver.get("https://instagram.com")
 
