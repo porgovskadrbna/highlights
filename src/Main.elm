@@ -123,27 +123,31 @@ update msg model =
 
                             getText =
                                 .text >> String.toLower >> String.removeAccents
-                        in
-                        flip (++)
-                            (List.filter (.text >> String.toLower >> String.removeAccents >> String.contains query) model.posts)
-                        <|
-                            case String.toList query of
-                                [ p, q ] ->
-                                    let
-                                        initials =
-                                            List.map String.fromList <|
-                                                [ [ p, q ]
-                                                , [ p, '.', q ]
-                                                ]
-                                    in
-                                    flip List.filter model.posts <|
-                                        \post ->
-                                            String.contains (String.fromList [ p, '.', ' ', q ]) (getText post)
-                                                || List.any (\word -> List.any ((==) word) initials)
-                                                    (Regex.split whitespace (getText post))
 
-                                _ ->
-                                    []
+                            initialsFilter =
+                                case String.toList query of
+                                    [ p, q ] ->
+                                        let
+                                            initials =
+                                                List.map String.fromList <|
+                                                    [ [ p, q ]
+                                                    , [ p, '.', q ]
+                                                    ]
+                                        in
+                                        flip List.filter model.posts <|
+                                            \post ->
+                                                String.contains (String.fromList [ p, '.', ' ', q ]) (getText post)
+                                                    || List.any (\word -> List.any ((==) word) initials)
+                                                        (Regex.split whitespace (getText post))
+
+                                    _ ->
+                                        []
+
+                            simpleFilter =
+                                List.filter (getText >> String.contains query) model.posts
+                        in
+                        List.uniqueBy .src
+                            (initialsFilter ++ simpleFilter)
               }
             , Cmd.none
             )
