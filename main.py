@@ -23,7 +23,9 @@ try:
 
         parent = next.find_element_by_xpath("..")
         imgs.append(
-            parent.find_element_by_css_selector("img").get_attribute("src")
+            parent.find_element(by=By.CSS_SELECTOR, value="img").get_attribute(
+                "src"
+            )
         )
 
         next.click()
