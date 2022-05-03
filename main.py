@@ -21,7 +21,7 @@ try:
         except:
             break
 
-        parent = next.find_element_by_xpath("..")
+        parent = next.find_element(by=By.XPATH, value="..")
         imgs.append(
             parent.find_element(by=By.CSS_SELECTOR, value="img").get_attribute(
                 "src"
