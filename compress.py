@@ -1,8 +1,8 @@
 import glob
 from PIL import Image
 
-years = ["2021", "2022"]
-months = ["zari", "rijen", "listopad", "prosinec", "leden", "unor"]
+years = ["2022"]
+months = ["cerven", "zari", "rijen"]
 
 for year in years:
     for month in months:
